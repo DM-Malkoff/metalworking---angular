@@ -33,7 +33,9 @@
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/font-awesome.min.css",
               "src/assets/css/owl.theme.default.min.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "primeng/resources/primeng.css",
+              "primeng/resources/themes/saga-blue/theme.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",

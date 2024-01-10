@@ -1,0 +1,66 @@
+<nav class="site__order__wr">
+  @if (isMessageSent) {
+    <div class="text-center">
+      <p class="font-bold">Форма отправлена</p>
+      <p>В ближайшее время с Вами свяжется наш менеджер для обсуждения деталей.</p>
+    </div>
+  } @else {
+    <p class="text-center">Укажите Ваш номер телефона и имя</p>
+    <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
+      <table class="form_table">
+        <tbody>
+        <tr>
+          <td>
+            <div class="form_label">
+              <label>Телефон</label>
+            </div>
+            <p-inputMask
+              mask="+7-999-999-99-99"
+              placeholder="+7-999-999-99-99"
+              formControlName="phone"
+            ></p-inputMask>
+            @if (orderForm.get('phone')?.invalid && orderForm.get('phone')?.touched) {
+              <small class="danger" >Введите корректный номер телефона</small>
+            }
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form_label">
+              <label>Ваше имя</label>
+            </div>
+            <input
+              type="text"
+              pInputText
+              formControlName="name"
+              placeholder="Введите ФИО"
+            >
+            @if (orderForm.get('name')?.invalid && orderForm.get('name')?.touched) {
+              <small class="danger" >Введите Ваше имя</small>
+            }
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form_label">
+              <label>Комментарий</label>
+            </div>
+            <textarea rows="3" cols="30" pInputTextarea [autoResize]="true" formControlName="text"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="field_accept_callback">
+              Нажимая кнопку "Отправить", я даю своё согласие на обработку персональных данных в соответствии с
+              законом ФЗ-152 О персональных данных.
+            </div>
+            <div class="order">
+              <input class="btn btn-cta" type="submit" placeholder="Отправить" [disabled]="orderForm.invalid">
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </form>
+  }
+</nav>

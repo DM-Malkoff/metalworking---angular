@@ -1,22 +1,15 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { EMAIL, PRHONE } from '../../constants/contacts';
-import { CommonModule } from '@angular/common';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {PRHONE} from "../../constants/contacts";
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-order-block',
   standalone: true,
-  imports: [
-    CommonModule
-  ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  imports: [],
+  templateUrl: './order-block.component.html',
+  styleUrl: './order-block.component.scss'
 })
-export class HeaderComponent {
-  public email: string = EMAIL;
+export class OrderBlockComponent {
   public phone: string = PRHONE;
-
-  public menuVisibility: boolean = false;
-
   /**
    * Эмиттер заголовка формы "Обратный звонок"
    */

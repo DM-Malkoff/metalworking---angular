@@ -1,2 +1,2 @@
-export const PRHONE = '+7 (495) 123-45-67'
-export const EMAIL = 'email@email.ru'
+export const PRHONE = '+7 (495) 246-37-36'
+export const EMAIL = 'info@tokarnye-raboty-na-zakaz.ru'
